@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20240109 00:29:05.007" rpa="false" schemaversion="3">
+<suite id="s1" name="TS02-Authors" source="d:\fakerest\Test\TS02-Authors.robot">
+<test id="s1-t1" name="User GET author." line="5">
+<kw name="User GET author." library="authors">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>accept=application/json; v=1.0</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20240109 00:29:05.249" level="INFO">${header} = {'accept': 'application/json; v=1.0'}</msg>
+<status status="PASS" starttime="20240109 00:29:05.248" endtime="20240109 00:29:05.251"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>getAuthors</arg>
+<arg>${baseUrl}</arg>
+<arg>disable_warnings=1</arg>
+<arg>headers=${header}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20240109 00:29:05.251" level="INFO">Creating Session using : alias=getAuthors, url=https://fakerestapi.azurewebsites.net/, headers={'accept': 'application/json; v=1.0'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20240109 00:29:05.251" endtime="20240109 00:29:05.252"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${getAuthors}</var>
+<arg>getAuthors</arg>
+<arg>api/v1/Authors</arg>
+<arg>expected_status=Anything</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20240109 00:29:06.217" level="INFO">GET Request : url=https://fakerestapi.azurewebsites.net/api/v1/Authors 
+ path_url=/api/v1/Authors 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json; v=1.0', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20240109 00:29:06.218" level="INFO">GET Response : url=https://fakerestapi.azurewebsites.net/api/v1/Authors 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json; charset=utf-8; v=1.0', 'Date': 'Mon, 08 Jan 2024 17:28:51 GMT', 'Server': 'Kestrel', 'Transfer-Encoding': 'chunked', 'api-supported-versions': '1.0'} 
+ body=[{"id":1,"idBook":1,"firstName":"First Name 1","lastName":"Last Name 1"},{"id":2,"idBook":1,"firstName":"First Name 2","lastName":"Last Name 2"},{"id":3,"idBook":1,"firstName":"First Name 3","lastName":"Last Name 3"},{"id":4,"idBook":2,"firstName":"First Name 4","lastName":"Last Name 4"},{"id":5,"idBook":2,"firstName":"First Name 5","lastName":"Last Name 5"},{"id":6,"idBook":2,"firstName":"First Name 6","lastName":"Last Name 6"},{"id":7,"idBook":3,"firstName":"First Name 7","lastName":"Last Name 7"},{"id":8,"idBook":3,"firstName":"First Name 8","lastName":"Last Name 8"},{"id":9,"idBook":3,"firstName":"First Name 9","lastName":"Last Name 9"},{"id":10,"idBook":3,"firstName":"First Name 10","lastName":"Last Name 10"},{"id":11,"idBook":4,"firstName":"First Name 11","lastName":"Last Name 11"},{"id":12,"idBook":4,"firstName":"First Name 12","lastName":"Last Name 12"},{"id":13,"idBook":5,"firstName":"First Name 13","lastName":"Last Name 13"},{"id":14,"idBook":5,"firstName":"First Name 14","lastName":"Last Name 14"},{"id":15,"idBook":6,"firstName":"First Name 15","lastName":"Last Name 15"},{"id":16,"idBook":6,"firstName":"First Name 16","lastName":"Last Name 16"},{"id":17,"idBook":7,"firstName":"First Name 17","lastName":"Last Name 17"},{"id":18,"idBook":7,"firstName":"First Name 18","lastName":"Last Name 18"},{"id":19,"idBook":7,"firstName":"First Name 19","lastName":"Last Name 19"},{"id":20,"idBook":8,"firstName":"First Name 20","lastName":"Last Name 20"},{"id":21,"idBook":8,"firstName":"First Name 21","lastName":"Last Name 21"},{"id":22,"idBook":8,"firstName":"First Name 22","lastName":"Last Name 22"},{"id":23,"idBook":8,"firstName":"First Name 23","lastName":"Last Name 23"},{"id":24,"idBook":9,"firstName":"First Name 24","lastName":"Last Name 24"},{"id":25,"idBook":9,"firstName":"First Name 25","lastName":"Last Name 25"},{"id":26,"idBook":9,"firstName":"First Name 26","lastName":"Last Name 26"},{"id":27,"idBook":10,"firstName":"First Name 27","lastName":"Last Name 27"},{"id":28,"idBook":10,"firstName":"First Name 28","lastName":"Last Name 28"},{"id":29,"idBook":10,"firstName":"First Name 29","lastName":"Last Name 29"},{"id":30,"idBook":11,"firstName":"First Name 30","lastName":"Last Name 30"},{"id":31,"idBook":11,"firstName":"First Name 31","lastName":"Last Name 31"},{"id":32,"idBook":11,"firstName":"First Name 32","lastName":"Last Name 32"},{"id":33,"idBook":11,"firstName":"First Name 33","lastName":"Last Name 33"},{"id":34,"idBook":12,"firstName":"First Name 34","lastName":"Last Name 34"},{"id":35,"idBook":12,"firstName":"First Name 35","lastName":"Last Name 35"},{"id":36,"idBook":12,"firstName":"First Name 36","lastName":"Last Name 36"},{"id":37,"idBook":12,"firstName":"First Name 37","lastName":"Last Name 37"},{"id":38,"idBook":13,"firstName":"First Name 38","lastName":"Last Name 38"},{"id":39,"idBook":13,"firstName":"First Name 39","lastName":"Last Name 39"},{"id":40,"idBook":14,"firstName":"First Name 40","lastName":"Last Name 40"},{"id":41,"idBook":14,"firstName":"First Name 41","lastName":"Last Name 41"},{"id":42,"idBook":14,"firstName":"First Name 42","lastName":"Last Name 42"},{"id":43,"idBook":14,"firstName":"First Name 43","lastName":"Last Name 43"},{"id":44,"idBook":15,"firstName":"First Name 44","lastName":"Last Name 44"},{"id":45,"idBook":15,"firstName":"First Name 45","lastName":"Last Name 45"},{"id":46,"idBook":15,"firstName":"First Name 46","lastName":"Last Name 46"},{"id":47,"idBook":15,"firstName":"First Name 47","lastName":"Last Name 47"},{"id":48,"idBook":16,"firstName":"First Name 48","lastName":"Last Name 48"},{"id":49,"idBook":16,"firstName":"First Name 49","lastName":"Last Name 49"},{"id":50,"idBook":17,"firstName":"First Name 50","lastName":"Last Name 50"},{"id":51,"idBook":17,"firstName":"First Name 51","lastName":"Last Name 51"},{"id":52,"idBook":17,"firstName":"First Name 52","lastName":"Last Name 52"},{"id":53,"idBook":17,"firstName":"First Name 53","lastName":"Last Name 53"},{"id":54,"idBook":18,"firstName":"First Name 54","lastName":"Last Name 54"},{"id":55,"idBook":18,"firstName":"First Name 55","lastName":"Last Name 55"},{"id":56,"idBook":19,"firstName":"First Name 56","lastName":"Last Name 56"},{"id":57,"idBook":19,"firstName":"First Name 57","lastName":"Last Name 57"},{"id":58,"idBook":19,"firstName":"First Name 58","lastName":"Last Name 58"},{"id":59,"idBook":19,"firstName":"First Name 59","lastName":"Last Name 59"},{"id":60,"idBook":20,"firstName":"First Name 60","lastName":"Last Name 60"},{"id":61,"idBook":20,"firstName":"First Name 61","lastName":"Last Name 61"},{"id":62,"idBook":20,"firstName":"First Name 62","lastName":"Last Name 62"},{"id":63,"idBook":20,"firstName":"First Name 63","lastName":"Last Name 63"},{"id":64,"idBook":21,"firstName":"First Name 64","lastName":"Last Name 64"},{"id":65,"idBook":21,"firstName":"First Name 65","lastName":"Last Name 65"},{"id":66,"idBook":21,"firstName":"First Name 66","lastName":"Last Name 66"},{"id":67,"idBook":21,"firstName":"First Name 67","lastName":"Last Name 67"},{"id":68,"idBook":22,"firstName":"First Name 68","lastName":"Last Name 68"},{"id":69,"idBook":22,"firstName":"First Name 69","lastName":"Last Name 69"},{"id":70,"idBook":23,"firstName":"First Name 70","lastName":"Last Name 70"},{"id":71,"idBook":23,"firstName":"First Name 71","lastName":"Last Name 71"},{"id":72,"idBook":24,"firstName":"First Name 72","lastName":"Last Name 72"},{"id":73,"idBook":24,"firstName":"First Name 73","lastName":"Last Name 73"},{"id":74,"idBook":24,"firstName":"First Name 74","lastName":"Last Name 74"},{"id":75,"idBook":24,"firstName":"First Name 75","lastName":"Last Name 75"},{"id":76,"idBook":25,"firstName":"First Name 76","lastName":"Last Name 76"},{"id":77,"idBook":25,"firstName":"First Name 77","lastName":"Last Name 77"},{"id":78,"idBook":25,"firstName":"First Name 78","lastName":"Last Name 78"},{"id":79,"idBook":26,"firstName":"First Name 79","lastName":"Last Name 79"},{"id":80,"idBook":26,"firstName":"First Name 80","lastName":"Last Name 80"},{"id":81,"idBook":26,"firstName":"First Name 81","lastName":"Last Name 81"},{"id":82,"idBook":27,"firstName":"First Name 82","lastName":"Last Name 82"},{"id":83,"idBook":27,"firstName":"First Name 83","lastName":"Last Name 83"},{"id":84,"idBook":28,"firstName":"First Name 84","lastName":"Last Name 84"},{"id":85,"idBook":28,"firstName":"First Name 85","lastName":"Last Name 85"},{"id":86,"idBook":28,"firstName":"First Name 86","lastName":"Last Name 86"},{"id":87,"idBook":29,"firstName":"First Name 87","lastName":"Last Name 87"},{"id":88,"idBook":29,"firstName":"First Name 88","lastName":"Last Name 88"},{"id":89,"idBook":30,"firstName":"First Name 89","lastName":"Last Name 89"},{"id":90,"idBook":30,"firstName":"First Name 90","lastName":"Last Name 90"},{"id":91,"idBook":31,"firstName":"First Name 91","lastName":"Last Name 91"},{"id":92,"idBook":31,"firstName":"First Name 92","lastName":"Last Name 92"},{"id":93,"idBook":31,"firstName":"First Name 93","lastName":"Last Name 93"},{"id":94,"idBook":31,"firstName":"First Name 94","lastName":"Last Name 94"},{"id":95,"idBook":32,"firstName":"First Name 95","lastName":"Last Name 95"},{"id":96,"idBook":32,"firstName":"First Name 96","lastName":"Last Name 96"},{"id":97,"idBook":32,"firstName":"First Name 97","lastName":"Last Name 97"},{"id":98,"idBook":33,"firstName":"First Name 98","lastName":"Last Name 98"},{"id":99,"idBook":33,"firstName":"First Name 99","lastName":"Last Name 99"},{"id":100,"idBook":34,"firstName":"First Name 100","lastName":"Last Name 100"},{"id":101,"idBook":34,"firstName":"First Name 101","lastName":"Last Name 101"},{"id":102,"idBook":35,"firstName":"First Name 102","lastName":"Last Name 102"},{"id":103,"idBook":35,"firstName":"First Name 103","lastName":"Last Name 103"},{"id":104,"idBook":35,"firstName":"First Name 104","lastName":"Last Name 104"},{"id":105,"idBook":35,"firstName":"First Name 105","lastName":"Last Name 105"},{"id":106,"idBook":36,"firstName":"First Name 106","lastName":"Last Name 106"},{"id":107,"idBook":36,"firstName":"First Name 107","lastName":"Last Name 107"},{"id":108,"idBook":36,"firstName":"First Name 108","lastName":"Last Name 108"},{"id":109,"idBook":36,"firstName":"First Name 109","lastName":"Last Name 109"},{"id":110,"idBook":37,"firstName":"First Name 110","lastName":"Last Name 110"},{"id":111,"idBook":37,"firstName":"First Name 111","lastName":"Last Name 111"},{"id":112,"idBook":37,"firstName":"First Name 112","lastName":"Last Name 112"},{"id":113,"idBook":38,"firstName":"First Name 113","lastName":"Last Name 113"},{"id":114,"idBook":38,"firstName":"First Name 114","lastName":"Last Name 114"},{"id":115,"idBook":38,"firstName":"First Name 115","lastName":"Last Name 115"},{"id":116,"idBook":38,"firstName":"First Name 116","lastName":"Last Name 116"},{"id":117,"idBook":39,"firstName":"First Name 117","lastName":"Last Name 117"},{"id":118,"idBook":39,"firstName":"First Name 118","lastName":"Last Name 118"},{"id":119,"idBook":39,"firstName":"First Name 119","lastName":"Last Name 119"},{"id":120,"idBook":39,"firstName":"First Name 120","lastName":"Last Name 120"},{"id":121,"idBook":40,"firstName":"First Name 121","lastName":"Last Name 121"},{"id":122,"idBook":40,"firstName":"First Name 122","lastName":"Last Name 122"},{"id":123,"idBook":40,"firstName":"First Name 123","lastName":"Last Name 123"},{"id":124,"idBook":40,"firstName":"First Name 124","lastName":"Last Name 124"},{"id":125,"idBook":41,"firstName":"First Name 125","lastName":"Last Name 125"},{"id":126,"idBook":41,"firstName":"First Name 126","lastName":"Last Name 126"},{"id":127,"idBook":41,"firstName":"First Name 127","lastName":"Last Name 127"},{"id":128,"idBook":42,"firstName":"First Name 128","lastName":"Last Name 128"},{"id":129,"idBook":42,"firstName":"First Name 129","lastName":"Last Name 129"},{"id":130,"idBook":42,"firstName":"First Name 130","lastName":"Last Name 130"},{"id":131,"idBook":43,"firstName":"First Name 131","lastName":"Last Name 131"},... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20240109 00:29:06.228" level="INFO">${getAuthors} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20240109 00:29:05.252" endtime="20240109 00:29:06.229"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${getAuthorsJson}</var>
+<arg>${getAuthors.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240109 00:29:06.230" level="INFO">${getAuthorsJson} = [{'id': 1, 'idBook': 1, 'firstName': 'First Name 1', 'lastName': 'Last Name 1'}, {'id': 2, 'idBook': 1, 'firstName': 'First Name 2', 'lastName': 'Last Name 2'}, {'id': 3, 'idBook': 1, 'firstName': 'Fi...</msg>
+<status status="PASS" starttime="20240109 00:29:06.229" endtime="20240109 00:29:06.231"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${getAuthorsStatusCode}</var>
+<arg>${getAuthors.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240109 00:29:06.231" level="INFO">${getAuthorsStatusCode} = 200</msg>
+<status status="PASS" starttime="20240109 00:29:06.231" endtime="20240109 00:29:06.232"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${getAuthorsJson}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240109 00:29:06.233" level="INFO">${getAuthorsJson} = [{'id': 1, 'idBook': 1, 'firstName': 'First Name 1', 'lastName': 'Last Name 1'}, {'id': 2, 'idBook': 1, 'firstName': 'First Name 2', 'lastName': 'Last Name 2'}, {'id': 3, 'idBook': 1, 'firstName': 'Fi...</msg>
+<status status="PASS" starttime="20240109 00:29:06.232" endtime="20240109 00:29:06.233"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${getAuthorsStatusCode}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240109 00:29:06.234" level="INFO">${getAuthorsStatusCode} = 200</msg>
+<status status="PASS" starttime="20240109 00:29:06.233" endtime="20240109 00:29:06.234"/>
+</kw>
+<status status="PASS" starttime="20240109 00:29:05.248" endtime="20240109 00:29:06.234"/>
+</kw>
+<kw name="User validate GET authors status code." library="authors">
+<arg>200</arg>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${getAuthorsStatusCode}</arg>
+<arg>${expectedStatusCode}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20240109 00:29:06.235" endtime="20240109 00:29:06.235"/>
+</kw>
+<status status="PASS" starttime="20240109 00:29:06.235" endtime="20240109 00:29:06.235"/>
+</kw>
+<status status="PASS" starttime="20240109 00:29:05.247" endtime="20240109 00:29:06.236"/>
+</test>
+<status status="PASS" starttime="20240109 00:29:05.011" endtime="20240109 00:29:06.238"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TS02-Authors">TS02-Authors</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
