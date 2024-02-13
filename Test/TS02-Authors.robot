@@ -25,3 +25,8 @@ User able to POST author with empty firstName.
 User able to POST author with empty lastName.
     User POST author    2    2    John  ${EMPTY}
     User validate POST authors status code.    200
+
+User able to get authors book by id.
+    User GET author book by id.    3
+    User validate GET authors status code.    200
+    Validate get author book response message    3

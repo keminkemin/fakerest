@@ -30,3 +30,20 @@ User POST author
 User validate POST authors status code.
     [Arguments]    ${expectedStatusCode}
     Should Be Equal    ${postAuthorsStatusCode}    ${expectedStatusCode}
+
+User GET author book by id.
+    [Arguments]    ${idBook}
+    ${header}=    Create Dictionary    accept=application/json; v=1.0
+    Create Session    getAuthors    ${baseUrl}    disable_warnings=1    headers=${header} 
+    ${getAuthors}=    GET On Session    getAuthors    /api/v1/Authors/authors/books/${idBook}   expected_status=Anything
+    ${getAuthorsJson}=    Set Variable    ${getAuthors.json()}
+    ${getAuthorsStatusCode}=    Convert To String    ${getAuthors.status_code}
+    Set Test Variable    ${getAuthorsJson}
+    Set Test Variable    ${getAuthorsStatusCode}
+
+Validate get author book response message
+    [Arguments]    ${expectedMessage}
+    ${message}=    Convert To Integer    ${expectedMessage}
+    ${getAuthorsMessage}=    Get Value From Json    ${getAuthorsJson}    $..idBook
+    ${getAuthorsMessage}=    Get From List    ${getAuthorsMessage}    0
+    Should Be Equal    ${getAuthorsMessage}    ${message}
