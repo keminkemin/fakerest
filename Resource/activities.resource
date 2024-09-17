@@ -1,6 +1,5 @@
 *** Settings ***
 Resource    ../Resource/init.resource
-Library    RequestsLibrary
 
 *** Keywords ***
 User GET activities.
